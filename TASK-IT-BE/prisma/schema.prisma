@@ -1,0 +1,54 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id                   String    @id @default(cuid())
+  emailId              String    @unique
+  isEmailVerified      Boolean   @default(false)
+  fullName             String
+  password             String    // Added password field
+  authOption           AuthOption
+  posts                Post[]
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+
+  @@map("users")
+}
+
+model Post {
+  id        String      @id @default(cuid())
+  userId    String
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tag       String?
+  type      PostType
+  title     String
+  content   String?     @db.Text
+  mediaUrl  String?     // for video or image
+  link      String?
+  authOption AuthOption
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  @@index([userId])
+  @@map("posts")
+}
+
+enum AuthOption {
+  PUBLIC
+  PRIVATE
+  FRIENDS_ONLY
+}
+
+enum PostType {
+  TEXT
+  VIDEO
+  IMAGE
+  LINK
+}
