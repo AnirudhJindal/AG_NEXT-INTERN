@@ -7,6 +7,7 @@ A fullstack task management application with user authentication, real-time upda
 - **Frontend**: https://ag-next-intern-cgz3.vercel.app/
 - **Video Demo**: https://drive.google.com/file/d/1VmRMBaIYHXhNDwZIAWPWwpFq99JZN3vx/view?usp=drive_link
 - - **Backend**: https://vercel.com/anirudhs-projects-4f1303a7/ag-next-intern-wlck
+  -  *Swagger api** https://ag-next-intern.onrender.com/api-docs/
 
 ## Features
 
