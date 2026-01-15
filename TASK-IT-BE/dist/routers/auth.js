@@ -11,7 +11,7 @@ const model_1 = require("../db/model"); // your combined User/Task model file
 const authZod_1 = require("../zod/authZod");
 const userAuth_1 = require("../middleweres/userAuth");
 const dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
+dotenv_1.default.config;
 exports.authRouter = (0, express_1.Router)();
 const JWT_SECRET = process.env.JWT_SECRET;
 if (!JWT_SECRET)

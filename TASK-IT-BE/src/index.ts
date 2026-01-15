@@ -4,6 +4,7 @@ import cors from "cors"
 import { authRouter } from "./routers/auth"
 import mongoose from "mongoose"
 
+
 mongoose.connect(process.env.MONGO_URI!);
 const app = express()
 

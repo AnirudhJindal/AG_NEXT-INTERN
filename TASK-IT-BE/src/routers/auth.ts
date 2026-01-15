@@ -8,7 +8,7 @@ import {
 } from "../zod/authZod";
 import { userMiddleware } from "../middleweres/userAuth";
 import dotenv from "dotenv"
-dotenv.config()
+dotenv.config
 
 export const authRouter = Router();
 

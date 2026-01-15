@@ -14,4 +14,4 @@ app.use(express_1.default.json());
 app.use((0, cors_1.default)());
 app.use("/api/auth", auth_1.authRouter);
 app.use("/api/task", user_1.taskRouter);
-exports.default = app;
+app.listen(3000);
