@@ -26,7 +26,7 @@ export const AddPostModal = ({
     setLoading(true)
 
     const res = await axios.post(
-      '${import.meta.env.VITE_API_URL}/api/task',
+      'http://localhost:3000/api/task',
       {
         title,
         description,
