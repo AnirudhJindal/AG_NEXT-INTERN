@@ -4,8 +4,7 @@ import cors from "cors"
 import { authRouter } from "./routers/auth"
 import mongoose from "mongoose"
 
-mongoose.connect("mongodb+srv://ANIRUDH:q543H7zVHKujxL9h@cluster0.lbiokv1.mongodb.net/TaskIt")
-
+mongoose.connect(process.env.MONGO_URI!);
 const app = express()
 
 app.use(express.json())
@@ -13,7 +12,6 @@ app.use(cors())
 
 app.use("/api/auth" , authRouter)
  app.use("/api/task" , taskRouter)
-
 export default app;
    
 
