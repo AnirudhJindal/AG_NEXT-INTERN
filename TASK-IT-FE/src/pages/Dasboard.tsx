@@ -38,7 +38,7 @@ export const Dashboard = () => {
           return
         }
 
-        const res = await axios.get('${import.meta.env.VITE_API_URL}/api/task', {
+        const res = await axios.get('https://localhost:3000/signin/api/task', {
           headers: { Authorization: `${token}` },
         })
 //@ts-ignore
