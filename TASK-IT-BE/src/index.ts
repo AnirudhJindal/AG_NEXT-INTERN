@@ -13,9 +13,7 @@ app.use(cors())
 
 app.use("/api/auth" , authRouter)
  app.use("/api/task" , taskRouter)
-app.listen(3000 , ()=>{
-    console.log("app has started on port 3000")
-})
+
 export default app;
    
 
