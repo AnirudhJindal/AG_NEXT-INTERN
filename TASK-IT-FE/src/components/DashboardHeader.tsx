@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { AddPostModal } from './AddPosts'
 
 export const DashboardHeader = () => {

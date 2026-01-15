@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { ShareIcon } from '../icons/Share'
 import { TrashIcon } from '../icons/Trash'
 import { Document } from '../icons/Document'

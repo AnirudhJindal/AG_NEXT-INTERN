@@ -28,10 +28,10 @@ export const Signin = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/auth/login",
+        "${import.meta.env.VITE_API_URL}/api/auth/login",
         { email, password }
       );
-
+//@ts-ignore
       const { token, user } = response.data;
 
       localStorage.setItem("token", token);

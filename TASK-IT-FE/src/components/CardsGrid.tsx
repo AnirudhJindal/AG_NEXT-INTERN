@@ -1,4 +1,4 @@
-import React from "react";
+
 import { CardsComponent } from "./cards";
 
 export const CardsGrid = ({ tasks }: { tasks: any[] }) => {

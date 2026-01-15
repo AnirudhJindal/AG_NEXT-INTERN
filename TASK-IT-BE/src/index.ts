@@ -16,5 +16,6 @@ app.use("/api/auth" , authRouter)
 app.listen(3000 , ()=>{
     console.log("app has started on port 3000")
 })
+export default app;
    
 

@@ -38,10 +38,10 @@ export const Dashboard = () => {
           return
         }
 
-        const res = await axios.get('http://localhost:3000/api/task', {
+        const res = await axios.get('${import.meta.env.VITE_API_URL}/api/task', {
           headers: { Authorization: `${token}` },
         })
-
+//@ts-ignore
         setTasks(res.data.tasks || [])
       } catch {
         setError('Failed to fetch tasks')
