@@ -1,47 +1,33 @@
-import {ButtonComponent,} from "./components/Button"
-import { CardsComponent } from "./components/cards"
-import { PlusIcon } from "./icons/Plus"
-import { ShareIcon } from "./icons/Share"
-import { Sidebar } from "./components/sidebar"
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { SignUp } from "./pages/SignUp";
+import { MagicLink } from "./pages/MagicLink";
+import Landing from "./pages/landing";
+import { Dashboard } from "./pages/Dasboard";
+import { Signin } from "./pages/Signin";
+import { ProtectedRoute } from "./lib/ProtectedRoute";
+
 function App() {
-  return(
-   <>
-  <div className="flex h-screen">
-    {/* Sidebar - Left */}
-    <div className="flex-shrink-0">
-      <Sidebar/>
-    </div>
-    
-    {/* Main Content Area */}
-    <div className="flex-1 flex flex-col">
-      {/* Top Right Buttons */}
-      <div className="flex justify-end gap-3 m-4">
-        <ButtonComponent 
-          varient={"primary"} 
-          text={"Add Content"} 
-          startIcon={<PlusIcon size={"md"} color={"white"}/>}
-        />
-        <ButtonComponent 
-          varient={"secondary"} 
-          text={"Share Brain"} 
-          startIcon={<ShareIcon size={"md"} color={"#8c84e4"}/>}
-        />
-      </div>
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/magic/login" element={<MagicLink />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/" element={<Landing />} />
+        
       
-      {/* Cards - Center */}
-      <div className="flex-1 flex  justify-center gap-4">
-        <CardsComponent 
-          title={"kalle kale de a dub vich 2-2 "} 
-          messageType={"twitter"} 
-          link={"https://x.com/DudespostingWs/status/1946366880777941090"}
+        <Route 
+          path="/dashboard" 
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          } 
         />
-        <CardsComponent 
-          title={"kalle kale de a dub vich 2-2 "} 
-          messageType={"twitter"} 
-          link={"https://x.com/DudespostingWs/status/1946366880777941090"}
-        />
-      </div>
-    </div>
-  </div>
-</>)}
-export default App
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
